@@ -1,0 +1,1 @@
+Deploy Google’s groundbreaking technologies to generate speech with humanlike intonation. Built based on DeepMind’s speech synthesis expertise, the API delivers voices that are near human quality. 
