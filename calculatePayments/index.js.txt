@@ -1,0 +1,33 @@
+function calculatePayments(amount, downPayment, interestRate, term) {
+    // Calculate the principal amount.
+    const principal = amount - downPayment;
+  
+    // Calculate the monthly payment.
+    const monthlyPayment = principal * (interestRate / 12) / (1 - Math.pow(1 + interestRate / 12, -term));
+  
+    // Return the monthly payment.
+    return monthlyPayment;
+  }
+
+  const prompt = require("prompt-sync")();
+
+function calculatePayments(amount, downPayment, interestRate, term) {
+  // Calculate the principal amount.
+  const principal = amount - downPayment;
+
+  // Calculate the monthly payment.
+  const monthlyPayment = principal * (interestRate / 12) / (1 - Math.pow(1 + interestRate / 12, -term));
+
+  // Return the monthly payment.
+  return monthlyPayment;
+}
+
+// Prompt the user for the inputs to the function
+const amount = prompt("Enter the loan amount: ");
+const downPayment = prompt("Enter the down payment: ");
+const interestRate = prompt("Enter the interest rate: ");
+const term = prompt("Enter the term (in years): ");
+
+// Call the function and print the returned value
+const monthlyPayment = calculatePayments(amount, downPayment, interestRate, term);
+console.log(`The monthly payment is ${monthlyPayment}`);

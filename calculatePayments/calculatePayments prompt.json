@@ -1,0 +1,23 @@
+{
+  "title": "Untitled prompt",
+  "description": "",
+  "parameters": {
+    "candidateCount": 1,
+    "groundingPromptConfig": {
+      "disabled": true,
+      "groundingConfig": {
+        "sources": [
+          {
+            "type": "VERTEX_AI_SEARCH"
+          }
+        ]
+      }
+    },
+    "stopSequences": [],
+    "temperature": 0.2,
+    "tokenLimits": 1024
+  },
+  "type": "freeform",
+  "prefix": "function calculatePayments(amount, downPayment, interestRate, term) {\n    // Calculate the principal amount.\n    const principal = amount - downPayment;\n  \n    // Calculate the monthly payment.\n    const monthlyPayment = principal * (interestRate / 12) / (1 - Math.pow(1 + interestRate / 12, -term));\n  \n    // Return the monthly payment.\n    return monthlyPayment;\n  }\n\n// Use the Node.js prompt-sync module to prompt the user for the inputs to the above function, place each value in a variable, call the function, and print the returned value.",
+  "model": "code-bison@001"
+}

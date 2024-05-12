@@ -1,0 +1,196 @@
+{
+  "title": "Untitled prompt",
+  "description": "",
+  "parameters": {
+    "candidateCount": 1,
+    "groundingPromptConfig": {
+      "disabled": true,
+      "groundingConfig": {
+        "sources": [
+          {
+            "type": "VERTEX_AI_SEARCH"
+          }
+        ]
+      }
+    },
+    "stopSequences": [],
+    "temperature": 0.9,
+    "tokenLimits": 1024,
+    "topP": 1
+  },
+  "type": "chat",
+  "context": {
+    "parts": [
+      {
+        "text": ""
+      }
+    ]
+  },
+  "examples": [],
+  "messages": [
+    {
+      "author": "user",
+      "content": {
+        "parts": [
+          {
+            "text": "Hey Codey, can you help me with a Node.js question?"
+          }
+        ]
+      }
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " Certainly! I'd be more than happy to assist you with any Node.js-related queries you may have. How can I help?"
+          }
+        ]
+      },
+      "author": "bot",
+      "citationMetadata": {
+        "citations": [],
+        "sources": []
+      },
+      "groundingMetadata": {
+        "citations": [],
+        "sources": [],
+        "references": []
+      }
+    },
+    {
+      "author": "user",
+      "content": {
+        "parts": [
+          {
+            "text": "Could you tell me an easy way to prompt the user for input from the command line?"
+          }
+        ]
+      }
+    },
+    {
+      "author": "bot",
+      "content": {
+        "parts": [
+          {
+            "text": " Sure, there are a few ways to prompt the user for input from the command line in Node.js. One simple way is to use the `readline` module. Here's how you can do it:\n\n1. Install the `readline` module:\n```shell\nnpm install readline\n```\n\n2. Require the `readline` module in your Node.js script:\n```javascript\nconst readline = require('readline');\n```\n\n3. Create a new `readline` interface:\n```javascript\nconst rl = readline.createInterface({\n  input: process.stdin,\n  output: process.stdout\n});\n```\n\n4. Use the `question` method to prompt the user for input:\n```javascript\nrl.question('What is your name? ', (name) => {\n  // Do something with the user's input here\n  console.log(`Hello, ${name}!`);\n  rl.close();\n});\n```\n\n5. Once the user enters input, the callback function provided to the `question` method will be executed. Inside this callback, you can access the user's input through the `name` parameter.\n\nThis approach allows you to prompt the user for input and capture their response in your Node.js script.\n\nHere's a complete example that demonstrates how to use the `readline` module to prompt the user for input:\n\n```javascript\nconst readline = require('readline');\n\nconst rl = readline.createInterface({\n  input: process.stdin,\n  output: process.stdout\n});\n\nrl.question('What is your favorite color? ', (color) => {\n  console.log(`Your favorite color is ${color}.`);\n  rl.close();\n});\n```\n\nWhen you run this script, it will prompt you to enter your favorite color. Once you enter your color and press enter, the script will log your input to the console.\n\nI hope this helps! Let me know if you have any other Node.js-related questions."
+          }
+        ]
+      },
+      "citationMetadata": {
+        "citations": [
+          {
+            "startIndex": 1137,
+            "url": "https://bugsabounty.com/2022/04/making-the-hacker-toolkit-javascript-recon-tool",
+            "endIndex": 1281
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://bugsabounty.com/2022/04/making-the-hacker-toolkit-javascript-recon-tool",
+            "title": "https://bugsabounty.com/2022/04/making-the-hacker-toolkit-javascript-recon-tool",
+            "index": 1
+          }
+        ]
+      },
+      "groundingMetadata": {
+        "citations": [],
+        "sources": [],
+        "references": []
+      }
+    },
+    {
+      "author": "user",
+      "content": {
+        "parts": [
+          {
+            "text": "How about using prompt-sync?"
+          }
+        ]
+      }
+    },
+    {
+      "author": "bot",
+      "content": {
+        "parts": [
+          {
+            "text": " Certainly! `prompt-sync` is another popular option for getting user input from the command line in Node.js. Here's how you can use it:\n\n1. Install the `prompt-sync` module:\n```shell\nnpm install prompt-sync\n```\n\n2. Require the `prompt-sync` module in your Node.js script:\n```javascript\nconst prompt = require('prompt-sync')();\n```\n\n3. Use the `prompt` method to display a prompt and get user input:\n```javascript\nconst name = prompt('What is your name? ');\n```\n\n4. The user's input will be stored in the `name` variable.\n\nHere's a complete example that demonstrates how to use the `prompt-sync` module to get user input:\n\n```javascript\nconst prompt = require('prompt-sync')();\n\nconst name = prompt('What is your name? ');\nconsole.log(`Hello, ${name}!`);\n```\n\nWhen you run this script, it will prompt you to enter your name. Once you enter your name and press enter, the script will log a greeting message to the console.\n\nBoth `readline` and `prompt-sync` are commonly used for user input in Node.js, but their usage might vary based on the specific requirements and preferences of your project.\n\nLet me know if you have any more questions about Node.js or need help with anything else!"
+          }
+        ]
+      },
+      "citationMetadata": {
+        "citations": [],
+        "sources": []
+      },
+      "groundingMetadata": {
+        "citations": [],
+        "sources": [],
+        "references": []
+      }
+    },
+    {
+      "author": "user",
+      "content": {
+        "parts": [
+          {
+            "text": "Hey Codey, could you tell me what a package.json file is used for?"
+          }
+        ]
+      }
+    },
+    {
+      "author": "bot",
+      "content": {
+        "parts": [
+          {
+            "text": " Absolutely! A `package.json` file is a crucial configuration file used in Node.js projects. It serves several important purposes:\n\n1. **Package Identification:**\n   - Provides metadata about the Node.js package, including its name, version, and description.\n   - This information is essential for both developers and package managers.\n\n2. **Dependency Management:**\n   - Lists the dependencies required by the project, along with their versions.\n   - When you install these dependencies using a package manager like npm, they are automatically installed and managed based on the information in the `package.json` file.\n\n3. **Scripts Automation:**\n   - Lets you define custom scripts that can be executed using the `npm run` command.\n   - Common scripts include commands for starting the application, running tests, building the project, and more.\n\n4. **Project Metadata:**\n   - Can include additional information such as license, author, repository URL, and any other relevant details about the project.\n\nHere's a simplified example of a `package.json` file:\n\n```json\n{\n  \"name\": \"my-node-project\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A Node.js project for learning purposes.\",\n  \"dependencies\": {\n    \"express\": \"^4.17.1\",\n    \"mongodb\": \"^4.4.1\"\n  },\n  \"scripts\": {\n    \"start\": \"node server.js\",\n    \"test\": \"npm run lint && npm run test:unit\",\n    \"lint\": \"eslint .\",\n    \"test:unit\": \"mocha --exit\"\n  },\n  \"author\": \"John Doe\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/johndoe/my-node-project\"\n  }\n}\n```\n\nRemember to update your `package.json` file whenever you add or remove dependencies, change project metadata, or define new scripts.\n\nLet me know if you have any further questions or need clarification!"
+          }
+        ]
+      },
+      "citationMetadata": {
+        "citations": [],
+        "sources": []
+      },
+      "groundingMetadata": {
+        "citations": [],
+        "sources": [],
+        "references": []
+      }
+    },
+    {
+      "author": "user",
+      "content": {
+        "parts": [
+          {
+            "text": "How can i add prompt sync to my dependency list in my package.json file?"
+          }
+        ]
+      }
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " Certainly! To add `prompt-sync` as a dependency to your Node.js project's `package.json` file, follow these steps:\n\n1. Open your `package.json` file in a text editor.\n\n2. Locate the `dependencies` object within the file. It should look something like this:\n\n```json\n\"dependencies\": {\n  // Existing dependencies listed here\n}\n```\n\n3. Add the following line inside the `dependencies` object:\n\n```json\n\"prompt-sync\": \"^4.2.0\",\n```\n\nThis will add `prompt-sync` to your project's dependencies list with a version of 4.2.0 (you can update this version number if necessary).\n\n4. Save the `package.json` file.\n\n5. To install the `prompt-sync` dependency, run the following command in your terminal:\n\n```shell\nnpm install\n```\n\nThis will install `prompt-sync` and any other dependencies listed in your `package.json` file.\n\nOnce the installation is complete, you can start using `prompt-sync` in your Node.js project.\n\nHere's an example of how you might use `prompt-sync` to get user input:\n\n```javascript\nconst prompt = require('prompt-sync')();\n\nconst name = prompt('What is your name? ');\nconsole.log(`Hello, ${name}!`);\n```\n\nThis code will prompt the user to enter their name, store it in the `name` variable, and then log a greeting message to the console.\n\nLet me know if you have any other questions or need further assistance!"
+          }
+        ]
+      },
+      "author": "bot",
+      "citationMetadata": {
+        "citations": [
+          {
+            "title": "Your prompt",
+            "endIndex": 1109,
+            "startIndex": 963
+          }
+        ],
+        "sources": []
+      },
+      "groundingMetadata": {
+        "citations": [],
+        "sources": [],
+        "references": []
+      }
+    }
+  ],
+  "model": "codechat-bison"
+}
